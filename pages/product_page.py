@@ -11,7 +11,7 @@ class ProductPage(BasePage):
     By.XPATH,
     "(//a[@data-product-id='1' and contains(@class, 'add-to-cart')])[1]"
 )
-#view Cart link
+
     VIEW_CART_LINK = (By.XPATH, "//a[@href='/view_cart']")
     def search_product(self, product_name):
         self.type_text(self.SEARCH_INPUT, product_name)

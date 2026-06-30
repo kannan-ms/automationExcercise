@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException
 from config import TIMEOUT
 
-
+#All the common methods for all pages will be defined here
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
