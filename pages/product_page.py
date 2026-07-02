@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-
+#this is product page all the functions related to product page is here
 class ProductPage(BasePage):
     SEARCH_INPUT = (By.ID, "search_product")
     SEARCH_BUTTON = (By.ID, "submit_search")
