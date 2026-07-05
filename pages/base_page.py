@@ -1,4 +1,5 @@
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException
 from config import TIMEOUT
@@ -34,3 +35,17 @@ class BasePage:
 
     def is_visible(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).is_displayed()
+
+    def is_clickable(self, locator):
+        return self.wait.until(EC.element_to_be_clickable(locator)).is_enabled()
+
+    def find_all(self, locator):
+        self.wait.until(EC.presence_of_all_elements_located(locator))
+        return self.driver.find_elements(*locator)
+
+    def wait_until_invisible(self, locator):
+        return self.wait.until(EC.invisibility_of_element_located(locator))
+
+    def select_by_visible_text(self, locator, text):
+        element = self.wait.until(EC.visibility_of_element_located(locator))
+        Select(element).select_by_visible_text(text)

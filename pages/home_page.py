@@ -7,6 +7,7 @@ class HomePage(BasePage):
     LOGO = (By.XPATH, "//img[@alt='Website for automation practice']")
     PRODUCTS_LINK = (By.XPATH, "//a[@href='/products']")
     SIGNUP_LOGIN_LINK = (By.XPATH, "//a[@href='/login']")
+    CART_LINK = (By.XPATH, "//a[@href='/view_cart']")
 
     def open_home_page(self):
         self.open_url(BASE_URL)
@@ -19,3 +20,6 @@ class HomePage(BasePage):
 
     def go_to_login_page(self):
         self.click(self.SIGNUP_LOGIN_LINK)
+
+    def go_to_cart_page(self):
+        self.click(self.CART_LINK)
