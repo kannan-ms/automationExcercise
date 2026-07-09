@@ -162,3 +162,7 @@ The following scenarios are planned for the next phase:
 * Checkout flow and address validation
 * Invoice download validation
 * Scroll up and scroll down validation
+
+## About the Project
+
+The test scenarios were selected from the functional flows available in Automation Exercise. The automation framework, page classes, reusable methods, test data handling, reports, and failure screenshot handling were implemented as part of this project to practice real QA automation framework structure.

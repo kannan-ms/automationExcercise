@@ -3,7 +3,7 @@ from pages.product_page import ProductPage
 
 
 class TestProducts:
-
+    #these two are the functions for testing the products page
     def test_verify_all_products_and_product_detail_page(self, driver):
         home_page = HomePage(driver)
         product_page = ProductPage(driver)
@@ -18,7 +18,7 @@ class TestProducts:
 
         assert "/product_details/" in driver.current_url
         assert product_page.is_product_details_visible()
-
+    #this one is specifically for search product functionality
     def test_search_product(self, driver):
         home_page = HomePage(driver)
         product_page = ProductPage(driver)
