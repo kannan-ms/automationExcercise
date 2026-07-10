@@ -1,7 +1,7 @@
 from datetime import datetime
 from pathlib import Path
 
-
+#function to add failure screenshots
 def save_failure_screenshot(driver, test_name):
     screenshots_dir = Path("screenshots")
     screenshots_dir.mkdir(parents=True, exist_ok=True)
