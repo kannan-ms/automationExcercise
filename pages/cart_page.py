@@ -37,3 +37,4 @@ class CartPage(BasePage):
     def is_empty_cart_message_visible(self):
         elements = self.driver.find_elements(*self.EMPTY_CART_TEXT)
         return bool(elements) and elements[0].is_displayed()
+    #here i'm add something like a command to make some changes in the project code
