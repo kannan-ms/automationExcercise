@@ -43,3 +43,18 @@ class TestAuthentication:
         login_page.logout()
 
         assert login_page.is_login_form_visible()
+
+    def test_register_with_existing_email(self, driver):
+        user_data = generate_user_data()
+        home_page = HomePage(driver)
+        login_page = LoginPage(driver)
+
+        home_page.open_home_page()
+        home_page.go_to_login_page()
+        login_page.register_user(user_data)
+        login_page.logout()
+
+        home_page.go_to_login_page()
+        login_page.start_signup(user_data["name"], user_data["email"])
+
+        assert "already exist" in login_page.get_signup_error_message().lower()

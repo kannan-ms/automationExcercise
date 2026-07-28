@@ -7,6 +7,7 @@ class LoginPage(BasePage):
     LOGIN_PASSWORD = (By.XPATH, "//input[@data-qa='login-password']")
     LOGIN_BUTTON = (By.XPATH, "//button[@data-qa='login-button']")
     LOGIN_ERROR = (By.XPATH, "//p[contains(text(),'Your email or password is incorrect!')]")
+    SIGNUP_ERROR = (By.XPATH, "//p[contains(.,'already exist')]")
     LOGGED_IN_TEXT = (By.XPATH, "//a[contains(text(),'Logged in as')]")
     LOGOUT_LINK = (By.XPATH, "//a[@href='/logout']")
     LOGIN_TO_ACCOUNT_TEXT = (By.XPATH, "//h2[contains(text(),'Login to your account')]")
@@ -38,8 +39,16 @@ class LoginPage(BasePage):
         self.type_text(self.LOGIN_PASSWORD, password)
         self.click(self.LOGIN_BUTTON)
 
+    def start_signup(self, name, email):
+        self.type_text(self.SIGNUP_NAME, name)
+        self.type_text(self.SIGNUP_EMAIL, email)
+        self.click(self.SIGNUP_BUTTON)
+
     def get_error_message(self):
         return self.get_text(self.LOGIN_ERROR)
+
+    def get_signup_error_message(self):
+        return self.get_text(self.SIGNUP_ERROR)
 
     def get_logged_in_text(self):
         return self.get_text(self.LOGGED_IN_TEXT)
