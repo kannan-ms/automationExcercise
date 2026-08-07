@@ -34,4 +34,14 @@ class ContactPage(BasePage):
     def submit_contact_form(self):
         self.js_click(self.SUBMIT_BUTTON)
 
-   
+    def get_submission_message(self):
+        try:
+            alert = WebDriverWait(self.driver, 3).until(EC.alert_is_present())
+            message = alert.text
+            alert.accept()
+            return message
+        except TimeoutException:
+            if self.driver.find_elements(*self.SUCCESS_MESSAGE):
+                return self.get_text(self.SUCCESS_MESSAGE)
+
+        return ""
