@@ -160,8 +160,7 @@ The following scenarios are planned for the next phase:
 * Product review submission
 * Recommended products validation
 * Checkout flow and address validation
-* Invoice download validation
-* Scroll up and scroll down validation
+
 
 ## About the Project
 
